@@ -1,0 +1,28 @@
+def safe_pawns(pawns: set) -> int:
+    count = 0
+    test_pawn_list = list(pawns)
+    for pawn in test_pawn_list:
+        pawn_index = pawn_list.index(pawn)
+        if pawn_index in range(0,9):
+            pawn_right_index = pawn_index+7
+            pawn_right = pawn_list[pawn_right_index]
+            if pawn_right in test_pawn_list:
+                count+=1
+            else: pass
+        elif pawn_index % 8 == 0:
+            pass
+        elif pawn_index in range(56,64):
+            pawn_left_index = pawn_index-9
+            pawn_left = pawn_list[pawn_left_index]
+            if pawn_left in test_pawn_list:
+                count+=1
+            else: pass
+        else:
+             pawn_left_index = pawn_index-9
+             pawn_right_index = pawn_index+7
+             pawn_right = pawn_list[pawn_right_index]
+             pawn_left = pawn_list[pawn_left_index]
+             if pawn_left in test_pawn_list or pawn_right in test_pawn_list:
+                 count+=1
+             else: pass
+    return count
