@@ -1,0 +1,9 @@
+def sun_angle(time: str):
+    hour = int(time[0]+time[1])
+    minute = int(time[3]+time[4])
+    total_hour = hour + minute/60
+    angle = (total_hour-6)*15
+    if angle >= 0 and angle <= 180:
+        return angle
+    else:
+        return "I don't see the sun!"
