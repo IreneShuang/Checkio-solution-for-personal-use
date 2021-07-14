@@ -1,0 +1,17 @@
+def split_list(items: list) -> list:
+    result = []
+    if len(items) == 0:
+        empty_list = [[],[]]
+        return empty_list
+    elif len(items)%2 == 0:
+        items_front = items[:int(len(items)/2)]
+        items_back = items[int(len(items)/2):]
+        result.append(items_front)
+        result.append(items_back)
+        return result
+    else:
+        items_front = items[:int((len(items)+1)/2)]
+        items_back = items[int((len(items)+1)/2):]
+        result.append(items_front)
+        result.append(items_back)
+        return result
