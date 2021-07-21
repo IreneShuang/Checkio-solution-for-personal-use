@@ -1,0 +1,22 @@
+from datetime import datetime
+from typing import List
+
+def sum_light(els: List[datetime]) -> int:
+    """
+        how long the light bulb has been turned on
+    """
+    time_diff_list = []
+    open=[]
+    close=[]
+    
+    for i in range(0,len(els)):
+        if i%2==0:
+            open.append(i)
+        else: close.append(i)
+    
+    for j in range(0,len(open)):
+        time_diff = els[close[j]]-els[open[j]]
+        time_diff_int = time_diff.days*24*3600+time_diff.seconds
+        time_diff_list.append(time_diff_int)
+        result = sum(time_diff_list)
+    return result
